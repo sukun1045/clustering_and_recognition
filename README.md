@@ -20,6 +20,10 @@ H3.6M contains 15 different type of actions and for CMU Mocap we select 8 unique
 For both datasets, each sequence only contains one action. As a result, we manually concatenate multiple actions together to demonstrate the temporal segmentation. 
 To avoid biases on selecting data, we only mandatory choose the number of possible actions and then randomly select the sequences and orders of data. Each unique type of action can also be repeated. 
 
+## Requirements
+1. Tensorflow 1.13
+2. Python 3
+
 ## Getting Started
 For a quick demo, you can use pre-trained models and reproduce the videos shown above.
 
