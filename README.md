@@ -45,11 +45,11 @@ any action from `['walking', 'running', 'jumping', 'soccer', 'basketball', 'dire
 ## Files and functions
 - [X] Seq2Seq model (class)
 - [X] data_utils
-  - [ ] readCSV
-  - [ ] normalize data
-  - [ ] unormalize data
-  - [ ] expmap to rotation matrix
-  - [ ] get mini batch
+  - [X] readCSV
+  - [X] normalize data
+  - [X] unormalize data
+  - [X] expmap to rotation matrix
+  - [X] get mini batch
 - [X] Datasets
   - [X] CMU Mocap dataset
   - [ ] H3.6M dataset
