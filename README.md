@@ -1,7 +1,6 @@
 ---
-driveId:1HJZLtVLwDL8qyZAKboxrGkakdVjR7dgD/preview
+driveId: 1HJZLtVLwDL8qyZAKboxrGkakdVjR7dgD/preview
 ---
-
 # Temporal segmentation
 
 ## Introduction
