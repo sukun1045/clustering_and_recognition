@@ -1,7 +1,7 @@
 # Temporal segmentation
 
 ## Introduction
-This repository contains the code to use RNN-Based Sequence to Sequence model (Seq2Seq) for unsupervised temporal segmentation tested on H3.6M and CMU Mocap Dataset.
+This repository contains the code to use RNN-Based Sequence to Sequence model (Seq2Seq) for unsupervised temporal segmentation tested on CMU Mocap Dataset.
 
 ## Abstract
 We present that Seq2Seq model has capability to learn temporal embedding automatically. Given skeleton-based dataset, although we train the network to do regression,
@@ -11,31 +11,37 @@ we will perform motion prediction task and utilize the internal states in Recurr
 possible actions happening in the whole sequence and don't provide any label during training and testing.
 
 ## Datasets
-We do expermients on two human motion datasets: H3.6M dataset and CMU Mocap Dataset.
+We do expermients on two human motion datasets: CMU Mocap Dataset(done) and H3.6M(coming soon).
 
 We follow the work done by 
 [Julieta Martinez](https://github.com/una-dinosauria/human-motion-prediction) and [Chen Li](https://github.com/chaneyddtt/Convolutional-Sequence-to-Sequence-Model-for-Human-Dynamics) to
 use H3.6M dataset and CMU Mocap dataset which are two standard datasets for human motion prediction. Both datasets are preprocessed on exponential map format. You can download the data from their Github webpage.
 H3.6M contains 15 different type of actions and for CMU Mocap we select 8 unique actions (walking, running, jumping, basketball, soccer, washwindow, basketball signal, and directing traffic).
 For both datasets, each sequence only contains one action. As a result, we manually concatenate multiple actions together to demonstrate the temporal segmentation. 
-To avoid biases on selecting data, we only mandatory choose the number of possible actions and then randomly select the sequences and orders of data. Each unique type of action can also be repeated. 
+To avoid biases on selecting data, we only choose the number of possible actions (repeat or non-repeat) and then randomly select the sequences and orders of data. Each unique type of action can also be repeated. 
 
 ## Requirements
 1. Tensorflow 1.13
 2. Python 3
 
 ## Getting Started
-For a quick demo, you can use pre-trained models and reproduce the videos shown above.
-
 To train a new model from scratch, run
 ```bash
-python src/main.py --dataset CMU --actions_number 8
+python src/main.py --dataset cmu 
 ```
 
 ## Argument
-`--dataset`: a string that is either `CMU` or `H3.6M`.
+`--dataset`: a string that is either `cmu` or `h3.6m`.
 
-`--actions_number`: unique number of actions specified for tested sequence (2 to 8 for CMU, 2 to 15 for H3.6M).
+`--num_actions`: unique number of actions specified for tested sequence (2 to 8 for CMU, 2 to 15 for H3.6M).
+`--learning_rate`: float number, default is `0.001`
+`--batch_size`: interger number for choosing size of training batch,default is `16`
+`--source_seq_len`:integer,the sequence length for encoder, default is `25`
+`--target_seq_len`:integer,the sequence length for decoder, default is `25`
+`iterations`:integer, iterations for training, default is `1e4`
+`train_dir`:directory to save model
+`video_dir`:directory to save generated video (only if you `generate_video` flag is `True`)
+`load`: integer, the number of previous checkpoint you want to load.
 
 `--actions`: instead of randomly choose actions, you can specify a list that contains names of actions you want to show in the testing video. For CMU dataset, you can choose
 any action from `['walking', 'running', 'jumping', 'soccer', 'basketball', 'directing_traffic', 'washwindow', 'basketball_signal']
@@ -54,18 +60,18 @@ any action from `['walking', 'running', 'jumping', 'soccer', 'basketball', 'dire
   - [X] CMU Mocap dataset
   - [ ] H3.6M dataset
 - [X] experiments (checkpoint files)
-- [ ] forward kinematics
-  - [ ] some variables
-  - [ ] revert coordinate space
-  - [ ] fkl
-- [ ] visualize (class)
-  - [ ] axes
-  - [ ] update
-- [ ] main file
+- [X] forward kinematics
+  - [X] some variables
+  - [X] revert coordinate space
+  - [X] fkl
+- [X] visualize (class)
+  - [X] axes
+  - [X] update
+- [X] main file
   - [X] get data (readCSV)
   - [X] preprocess data (normalization)
   - [X] train (seq2seq model, mini_batch)
   - [X] get checkpoint (save)
   - [X] find cuts
   - [X] clustering
-  - [ ] generate results
+  - [X] generate results
