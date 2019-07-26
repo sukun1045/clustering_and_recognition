@@ -37,13 +37,23 @@ python src/main.py --dataset cmu
 `--dataset`: a string that is either `cmu` or `h3.6m`.
 
 `--num_actions`: unique number of actions specified for tested sequence (2 to 8 for CMU, 2 to 15 for H3.6M).
+
 `--learning_rate`: float number, default is `0.001`
+
 `--batch_size`: interger number for choosing size of training batch,default is `16`
+
 `--source_seq_len`:integer,the sequence length for encoder, default is `25`
+
 `--target_seq_len`:integer,the sequence length for decoder, default is `25`
+
 `iterations`:integer, iterations for training, default is `1e4`
+
 `train_dir`:directory to save model
+
+`gen_video`:boolean, whether to generate video, default is False
+
 `video_dir`:directory to save generated video (only if you `generate_video` flag is `True`)
+
 `load`: integer, the number of previous checkpoint you want to load.
 
 `--actions`: instead of randomly choose actions, you can specify a list that contains names of actions you want to show in the testing video. For CMU dataset, you can choose
