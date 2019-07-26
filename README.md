@@ -11,7 +11,7 @@ we will perform motion prediction task and utilize the internal states in Recurr
 possible actions happening in the whole sequence and don't provide any label during training and testing.
 
 ## Examples
-{% include youtubePlayer.html id=X9Oz81o55Gs %}
+{% include youtubePlayer.html id="X9Oz81o55Gs" %}
 
 ## Datasets
 We do expermients on two human motion datasets: CMU Mocap Dataset(done) and H3.6M(coming soon).
