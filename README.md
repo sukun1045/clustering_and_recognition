@@ -1,5 +1,5 @@
 ---
-driveId: 1HJZLtVLwDL8qyZAKboxrGkakdVjR7dgD/preview
+youtubeId: X9Oz81o55Gs
 ---
 
 # Temporal segmentation
@@ -15,7 +15,7 @@ we will perform motion prediction task and utilize the internal states in Recurr
 possible actions happening in the whole sequence and don't provide any label during training and testing.
 
 ## Examples
-{% include googleDrivePlayer.html id=page.driveId %}
+{% include youtubePlayer.html id=page.youtubeId %}
 
 ## Datasets
 We do expermients on two human motion datasets: CMU Mocap Dataset(done) and H3.6M(coming soon).
