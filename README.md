@@ -1,3 +1,7 @@
+---
+driveId: 1HJZLtVLwDL8qyZAKboxrGkakdVjR7dgD/preview
+---
+
 # Temporal segmentation
 
 ## Introduction
@@ -9,6 +13,9 @@ at the same time, the network itself is able to learn a embedding space that can
 To demonstrate our method, we first concatenate multiple different actions together manually and use Seq2Seq to learn the representation. During testing,
 we will perform motion prediction task and utilize the internal states in Recurrent Neural Network to do clustering. We only provide the total number of 
 possible actions happening in the whole sequence and don't provide any label during training and testing.
+
+## Examples
+{% include googleDrivePlayer.html id=page.driveId %}
 
 ## Datasets
 We do expermients on two human motion datasets: CMU Mocap Dataset(done) and H3.6M(coming soon).
