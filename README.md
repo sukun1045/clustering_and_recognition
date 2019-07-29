@@ -38,6 +38,12 @@ python src/main.py --dataset cmu
 
 `--num_actions`: unique number of actions specified for tested sequence (2 to 8 for CMU, 2 to 15 for H3.6M).
 
+`--unique`: boolean, are all actions in the sequence uniuqe or not, default is 'True'.
+
+`--actions`: a string to define your own actions, default is `random`. Instead of randomly choose actions, you can specify a list that contains names of actions you want to show in the testing video. For CMU dataset, you can choose
+any action from `['walking', 'running', 'jumping', 'soccer', 'basketball', 'directing_traffic', 'washwindow', 'basketball_signal']`. For H3.6M dataset, you can choose any action from `['walking', 'directions', 'discussion', 'eating', 'greeting', 'phoning', 'posing', 'purchases', 'sitting', 'sittingdown', 'smoking', 'takingphoto',
+'waiting', 'walkingdog','walkingtogether']`.
+
 `--learning_rate`: float number, default is `0.001`
 
 `--batch_size`: interger number for choosing size of training batch,default is `16`
@@ -56,10 +62,6 @@ python src/main.py --dataset cmu
 
 `load`: integer, the number of previous checkpoint you want to load.
 
-`--actions`: instead of randomly choose actions, you can specify a list that contains names of actions you want to show in the testing video. For CMU dataset, you can choose
-any action from `['walking', 'running', 'jumping', 'soccer', 'basketball', 'directing_traffic', 'washwindow', 'basketball_signal']
-`. For H3.6M dataset, you can choose any action from `['walking', 'directions', 'discussion', 'eating', 'greeting', 'phoning', 'posing', 'purchases', 'sitting', 'sittingdown', 'smoking', 'takingphoto',
-'waiting', 'walkingdog','walkingtogether']`.
 
 ## Files and functions
 - [X] Seq2Seq model (class)
