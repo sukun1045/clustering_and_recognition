@@ -44,7 +44,7 @@ class Ax3DPose(object):
     self.ax.set_yticklabels([])
     self.ax.set_zticklabels([])
 
-  def update(self, channels, lcolor="#3498db", rcolor="#e74c3c"):
+  def update(self, channels, color):
     """
     Update the plotted 3d pose.
 
@@ -55,7 +55,8 @@ class Ax3DPose(object):
     Returns
       Nothing. Simply updates the axis with the new pose.
     """
-
+    lcolor = color
+    rcolor = color
     assert channels.size == 114, "channels should have 96 entries, it has %d instead" % channels.size
     vals = np.reshape( channels, (38, -1) )
 

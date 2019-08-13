@@ -67,7 +67,7 @@ def _some_variables():
 
   expmapInd = np.split(np.arange(4,118)-1,38)
 
-  return parent, offset, posInd, expmapInd
+  return parent, offset, rotInd, expmapInd
 
 def revert_coordinate_space(channels, R0, T0):
   """
@@ -130,9 +130,9 @@ def fkl( angles, parent, offset, posInd, expmapInd ):
     if not posInd[i] : # If the list is empty
       xangle, yangle, zangle = 0, 0, 0
     else:
-      xangle = angles[ posInd[i][2]-1 ]
+      xangle = angles[ posInd[i][0]-1 ]
       yangle = angles[ posInd[i][1]-1 ]
-      zangle = angles[ posInd[i][0]-1 ]
+      zangle = angles[ posInd[i][2]-1 ]
 
     r = angles[ expmapInd[i] ]
 

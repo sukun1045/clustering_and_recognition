@@ -72,15 +72,20 @@ def clustering(model,cuts,test_states,all_states,data,nactions):
 
 	all_labels = pred_labels
 	all_labels = np.insert(all_labels,0,np.repeat(pred_labels[0],model.source_seq_len))
+	reduced_states_ = reduced_states
+	reduced_states_ = np.insert(reduced_states,0,np.tile(reduced_states[0],[model.source_seq_len,1]),axis=0)
 	for i in range(len(cuts)):
 		all_labels = np.insert(all_labels,cuts[i],np.repeat(pred_labels[cuts[i]],model.source_seq_len))
-	if accumulate>len(all_labels):
+		reduced_states_ = np.insert(reduced_states_,cuts[i],np.tile(reduced_states_[cuts[i]],[model.source_seq_len,1]),axis=0)
+	if accumulate>len(all_labels)-1:
 		all_labels = np.append(all_labels,np.repeat(all_labels[-1],accumulate-len(all_labels)))
+		reduced_states_ = np.vstack([reduced_states_,np.tile(reduced_states_[-1],[accumulate-len(reduced_states_),1])])
 
 	print("ARI: {0}".format(metrics.adjusted_rand_score(labels_true, all_labels)))
 	print("AMI: {0}".format(metrics.adjusted_mutual_info_score(labels_true, all_labels)))
 	print("V-measure: {0}".format(metrics.homogeneity_completeness_v_measure(labels_true, all_labels)))
-	return pred_labels,reduced_states,labels_true,all_labels
+	#return pred_labels,reduced_states,labels_true,all_labels
+	return pred_labels,reduced_states_,labels_true,all_labels
 
 def order_labels(true_labels,pred_labels):
 	key = []
