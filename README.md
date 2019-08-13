@@ -36,7 +36,7 @@ python src/main.py --dataset cmu --actions walking,running,jumping
 
 `--num_actions`: unique number of actions specified for tested sequence (2 to 8 for CMU, 2 to 15 for H3.6M).
 
-`--unique`: boolean, are all actions in the sequence uniuqe or not, default is 'True'.
+`--total_num_actions`: integer, total number of actions, default is '3'.
 
 `--actions`: a string to define your own actions, default is `random`. Instead of randomly choose actions, you can specify a list that contains names of actions you want to show in the testing video. For CMU dataset, you can choose
 any action from `['walking', 'running', 'jumping', 'soccer', 'basketball', 'directing_traffic', 'washwindow', 'basketball_signal']`. For H3.6M dataset, you can choose any action from `['walking', 'directions', 'discussion', 'eating', 'greeting', 'phoning', 'posing', 'purchases', 'sitting', 'sittingdown', 'smoking', 'takingphoto',
