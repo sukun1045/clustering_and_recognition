@@ -68,5 +68,7 @@ any action from `['walking', 'running', 'jumping', 'soccer', 'basketball', 'dire
 
 ## Argument of Case two
 `--demo`: boolean, default is `True`. Indicate whether to use saved models
+
 `--num_trial`: string, default is `01`. The sequence number you want to check. range from `01` to `14`.
+
 `--train_dir`: directory to save your new model
