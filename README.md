@@ -29,7 +29,7 @@ Case one: To train a new model from scratch, run
 ```bash
 python src/main.py --dataset cmu --actions walking,running,jumping
 ```
-Case two: We provide saved models (THE CHECKPOINT FILES WILL BE UPLOADED SOON). You can quickly check result by running
+Case two: We provide saved models in the `demo` folder (download:[Google Drive](https://drive.google.com/file/d/1fIgWPqs7ukCGN5tW5ka-6F56j9wOyIwX/view?usp=sharing)). You can quickly check result by running
 ```bash
 python src/subject_86.py --demo True --num_trial 01
 ```
